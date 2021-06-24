@@ -1,7 +1,9 @@
 import requests
 from bs4 import BeautifulSoup
 
-url = 'https://www.emag.ro/mouse-gaming-logitech-g502-hero-16k-dpi-negru-910-005470/pd/D077JCBBM'
+print("Insert link to eMag product:")
+url = input()
+
 res = requests.get(url)
 html_page = res.content
 soup = BeautifulSoup(html_page, 'html.parser')
