@@ -7,7 +7,6 @@ url = input()
 res = requests.get(url)
 html_page = res.content
 soup = BeautifulSoup(html_page, 'html.parser')
-#print(soup.prettify)
 text = soup.find_all(class_="product-new-price")
 price = text[0].prettify()
 
@@ -18,5 +17,5 @@ def cleanhtml(price):
     cleantext = re.sub(cleanr, '', price)
     return cleantext
 
-output = cleanhtml(price)
-print(output.translate({ord('\n'): None}))
+price2 = cleanhtml(price)
+output = price2.translate({ord('\n'): None})
